@@ -1,0 +1,6 @@
+{"level":"info","message":"Hello from Acquisitions!","service":"acquisitions-api","timestamp":"2025-12-02T20:06:12.508Z"}
+{"level":"info","message":"::1 - - [02/Dec/2025:20:06:12 +0000] \"GET / HTTP/1.1\" 200 24 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cursor/2.1.39 Chrome/138.0.7204.251 Electron/37.7.0 Safari/537.36\"","service":"acquisitions-api","timestamp":"2025-12-02T20:06:12.534Z"}
+{"level":"info","message":"Hello from Acquisitions!","service":"acquisitions-api","timestamp":"2025-12-02T20:06:13.109Z"}
+{"level":"info","message":"::1 - - [02/Dec/2025:20:06:13 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cursor/2.1.39 Chrome/138.0.7204.251 Electron/37.7.0 Safari/537.36\"","service":"acquisitions-api","timestamp":"2025-12-02T20:06:13.112Z"}
+{"level":"info","message":"Hello from Acquisitions!","service":"acquisitions-api","timestamp":"2025-12-02T20:06:13.463Z"}
+{"level":"info","message":"::1 - - [02/Dec/2025:20:06:13 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cursor/2.1.39 Chrome/138.0.7204.251 Electron/37.7.0 Safari/537.36\"","service":"acquisitions-api","timestamp":"2025-12-02T20:06:13.469Z"}
