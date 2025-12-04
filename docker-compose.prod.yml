@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  # Application service for production
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: acquisitions-app-prod
+    ports:
+      - '${PORT:-3000}:3000'
+    env_file:
+      - .env.development
+    volumes:
+      # Mount logs directory only
+      - ./logs:/app/logs
+    networks:
+      - app-network
+    restart: always
+    # Resource limits for production
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
+        reservations:
+          cpus: '0.5'
+          memory: 256M
+
+networks:
+  app-network:
+    driver: bridge
