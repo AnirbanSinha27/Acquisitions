@@ -43,12 +43,14 @@ docker-compose -f docker-compose.prod.yml --env-file .env.production.local up -d
 ## 🏗️ Architecture
 
 ### Development Environment
+
 - **Neon Local**: Creates ephemeral database branches automatically
 - **Fresh data**: Each container start gets a new, clean database copy
 - **Isolated testing**: Changes don't affect production data
 - **Git integration**: Persistent branches per Git branch (optional)
 
 ### Production Environment
+
 - **Neon Cloud**: Direct connection to production database
 - **Optimized**: No proxy overhead
 - **Secure**: Environment-based secrets management
@@ -107,6 +109,7 @@ ARCJET_KEY=your_production_arcjet_key
 ### Running Migrations
 
 **Development:**
+
 ```powershell
 # Generate migrations
 docker-compose -f docker-compose.dev.yml exec app npm run db:generate
@@ -119,6 +122,7 @@ docker-compose -f docker-compose.dev.yml exec app npm run db:studio
 ```
 
 **Production:**
+
 ```powershell
 # Apply migrations
 docker-compose -f docker-compose.prod.yml exec app npm run db:migrate
@@ -172,6 +176,7 @@ docker-compose -f docker-compose.dev.yml exec app npm run lint
 ## 🐛 Troubleshooting
 
 ### Port Already in Use
+
 ```powershell
 # Check what's using port 3000 or 5432
 netstat -ano | findstr :3000
@@ -181,6 +186,7 @@ netstat -ano | findstr :5432
 ```
 
 ### Container Won't Start
+
 ```powershell
 # Check Docker logs
 docker-compose -f docker-compose.dev.yml logs
@@ -194,6 +200,7 @@ docker-compose -f docker-compose.dev.yml up -d
 ```
 
 ### Database Connection Issues
+
 ```powershell
 # Verify Neon credentials
 docker-compose -f docker-compose.dev.yml logs neon-local

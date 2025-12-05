@@ -5,24 +5,29 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 ## Development Commands
 
 ### Setup
+
 - `npm install` - Install dependencies
 
 ### Running the Application
+
 - `npm run dev` - Start the development server with Node watch mode (auto-reloads on file changes)
 - Server runs on `http://localhost:3000` by default (configurable via `PORT` environment variable)
 
 ### Code Quality
+
 - `npm run lint` - Run ESLint to check for code issues
 - `npm run lint:fix` - Automatically fix ESLint issues
 - `npm run format` - Format code with Prettier (note: package.json has typo "wite" instead of "write")
 - `npm run format:check` - Check if code is properly formatted
 
 ### Testing
+
 - No test framework or `test` script is configured in `package.json`.
 - ESLint is configured to recognize Jest globals under `tests/**/*.js`, but Jest is not installed and there is no `tests/` directory.
 - Running a single test is not applicable until a test runner is added.
 
 ### Database Operations (Drizzle ORM)
+
 - `npm run db:generate` - Generate database migrations from schema changes
 - `npm run db:migrate` - Apply pending migrations to the database
 - `npm run db:studio` - Open Drizzle Studio for database inspection
@@ -30,6 +35,7 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 ## Architecture Overview
 
 ### Tech Stack
+
 - **Framework**: Express.js (v5.x) with ES modules
 - **Database**: PostgreSQL via Neon serverless with Drizzle ORM
 - **Authentication**: JWT tokens stored in httpOnly cookies
@@ -38,6 +44,7 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 - **Security**: Helmet, CORS, bcrypt password hashing
 
 ### Application Structure
+
 The app follows a layered architecture with path aliases defined in `package.json`:
 
 ```
@@ -66,7 +73,9 @@ src/
 ```
 
 ### Import Path Aliases
+
 The project uses Node.js subpath imports (not TypeScript paths). Import using the `#` prefix:
+
 - `#config/*` → `./src/config/*`
 - `#controllers/*` → `./src/controllers/*`
 - `#middleware/*` → `./src/middleware/*`
@@ -81,25 +90,30 @@ Example: `import logger from '#config/logger.js'`
 ### Key Architectural Patterns
 
 #### Request Flow
+
 1. **Route** (`routes/*.js`) - Maps HTTP endpoints to controllers
 2. **Controller** (`controllers/*.js`) - Validates input via Zod schemas, calls services, formats responses
 3. **Service** (`services/*.js`) - Contains business logic, interacts with database via Drizzle
 4. **Model** (`models/*.js`) - Drizzle schema definitions for database tables
 
 #### Authentication Flow
+
 - JWT tokens are generated on signup/signin
 - Tokens are stored in httpOnly cookies (not localStorage)
 - Cookie max age: 15 minutes (see `utils/cookies.js`)
 - Token expiration: 1 day (see `utils/jwt.js`)
 
 #### Database Schema Management
+
 - Database models are defined using Drizzle's `pgTable` API in `src/models/`
 - Schema changes require running `npm run db:generate` to create migrations
 - Migrations are stored in the `drizzle/` directory
 - Apply migrations with `npm run db:migrate`
 
 ### Environment Configuration
+
 Required environment variables (stored in `.env`):
+
 - `DATABASE_URL` - PostgreSQL connection string (Neon serverless)
 - `JWT_SECRET` - Secret key for JWT signing
 - `PORT` - Server port (defaults to 3000)
@@ -107,11 +121,13 @@ Required environment variables (stored in `.env`):
 - `NODE_ENV` - Environment ('production' enables secure cookies and disables console logging)
 
 ### Code Style Enforcement
+
 - **ESLint**: Enforces 2-space indentation, single quotes, semicolons, no unused vars (except `_` prefix)
 - **Prettier**: Configured but note the typo in package.json `format` script
 - Files ignored by linting: `node_modules/`, `coverage/`, `logs/`, `drizzle/`
 
 ### API Endpoints
+
 - `GET /` - Basic health check
 - `GET /health` - Detailed health check with uptime
 - `GET /api` - API status check
@@ -120,6 +136,7 @@ Required environment variables (stored in `.env`):
 - `POST /api/auth/sign-out` - User logout (placeholder)
 
 ### Known Issues
+
 1. `package.json` line 19: `format` script has typo "wite" instead of "write"
 2. `src/utils/jwt.js` line 21: Typo "loggers.error" should be "logger.error"
 3. `src/services/auth.service.js` line 18: Missing `await` on database query - should be `await db.select()`
@@ -129,6 +146,7 @@ Required environment variables (stored in `.env`):
 ## Development Guidelines
 
 ### Adding New Features
+
 1. **Create model** in `src/models/` using Drizzle schema
 2. **Generate migration**: `npm run db:generate`
 3. **Apply migration**: `npm run db:migrate`
@@ -139,12 +157,14 @@ Required environment variables (stored in `.env`):
 8. **Register routes** in `src/app.js`
 
 ### Error Handling Pattern
+
 - Controllers use try-catch blocks
 - Validation errors return 400 with formatted error details
 - Business logic errors are logged and passed to error middleware via `next(error)`
 - Service layer throws errors that controllers catch and format
 
 ### Logging Best Practices
+
 - Use `logger.info()` for general information
 - Use `logger.error()` for errors with stack traces
 - Logs are automatically formatted with timestamps in JSON
