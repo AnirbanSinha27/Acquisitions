@@ -11,7 +11,7 @@ services:
     ports:
       - '${PORT:-3000}:3000'
     env_file:
-      - .env.development
+      - .env.production
     volumes:
       # Mount logs directory only
       - ./logs:/app/logs
