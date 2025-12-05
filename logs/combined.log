@@ -133,3 +133,54 @@
 {"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:47:30 +0000] \"GET /api/users/2 HTTP/1.1\" 200 14 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:47:30.925Z"}
 {"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:47:36 +0000] \"GET /api/users/2 HTTP/1.1\" 200 14 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:47:36.995Z"}
 {"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:47:38 +0000] \"GET /api/users/2 HTTP/1.1\" 200 14 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:47:38.270Z"}
+{"level":"info","message":"Getting user with ID: 2","service":"acquisitions-api","timestamp":"2025-12-05T18:48:39.297Z"}
+{"level":"error","message":"Error getting user by id User not found","service":"acquisitions-api","stack":"Error: User not found\n    at getUserById (file:///app/src/services/users.services.js:37:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async getUserById (file:///app/src/controllers/users.controller.js:40:22)","timestamp":"2025-12-05T18:48:39.641Z"}
+{"level":"error","message":"Error fetching user by ID User not found","service":"acquisitions-api","stack":"Error: User not found\n    at getUserById (file:///app/src/services/users.services.js:37:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async getUserById (file:///app/src/controllers/users.controller.js:40:22)","timestamp":"2025-12-05T18:48:39.642Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:48:39 +0000] \"GET /api/users/2 HTTP/1.1\" 404 26 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:48:39.657Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:48:45 +0000] \"GET /api/user HTTP/1.1\" 404 147 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:48:45.575Z"}
+{"level":"info","message":"Getting users...","service":"acquisitions-api","timestamp":"2025-12-05T18:48:47.637Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:48:47 +0000] \"GET /api/users HTTP/1.1\" 200 505 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:48:47.743Z"}
+{"level":"info","message":"Getting user with ID: 5","service":"acquisitions-api","timestamp":"2025-12-05T18:48:54.078Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:48:54 +0000] \"GET /api/users/5 HTTP/1.1\" 200 194 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:48:54.176Z"}
+{"level":"info","message":"Deleting user with ID: 5","service":"acquisitions-api","timestamp":"2025-12-05T18:49:26.238Z"}
+{"level":"info","message":"User 5 deleted successfully","service":"acquisitions-api","timestamp":"2025-12-05T18:49:26.437Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:49:26 +0000] \"DELETE /api/users/5 HTTP/1.1\" 200 39 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:49:26.440Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:49:39 +0000] \"DELETE /api/users HTTP/1.1\" 404 151 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:49:39.593Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:49:44 +0000] \"DELETE /api/user HTTP/1.1\" 404 150 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:49:44.972Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:49:46 +0000] \"DELETE /api/users HTTP/1.1\" 404 151 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:49:46.111Z"}
+{"level":"info","message":"Getting users...","service":"acquisitions-api","timestamp":"2025-12-05T18:49:51.515Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:49:51 +0000] \"GET /api/users HTTP/1.1\" 200 359 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:49:51.661Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:50:16 +0000] \"GET /api/auth/sign-in HTTP/1.1\" 404 155 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:50:16.706Z"}
+{"level":"error","message":"Error authenticating user: Error: User not found","service":"acquisitions-api","timestamp":"2025-12-05T18:50:23.707Z"}
+{"level":"error","message":"Signin error User not found","service":"acquisitions-api","stack":"Error: User not found\n    at authenticateUser (file:///app/src/services/auth.service.js:60:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async signin (file:///app/src/controllers/auth.controller.js:59:22)","timestamp":"2025-12-05T18:50:23.708Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:50:23 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 401 37 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:50:23.711Z"}
+{"level":"info","message":"Getting users...","service":"acquisitions-api","timestamp":"2025-12-05T18:50:46.324Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:50:46 +0000] \"GET /api/users HTTP/1.1\" 200 359 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:50:46.439Z"}
+{"level":"error","message":"Error authenticating user: Error: Invalid password","service":"acquisitions-api","timestamp":"2025-12-05T18:51:20.410Z"}
+{"level":"error","message":"Signin error Invalid password","service":"acquisitions-api","stack":"Error: Invalid password\n    at authenticateUser (file:///app/src/services/auth.service.js:66:19)\n    at async signin (file:///app/src/controllers/auth.controller.js:59:22)","timestamp":"2025-12-05T18:51:20.411Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:51:20 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 401 37 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:51:20.416Z"}
+{"level":"info","message":"User anannya@gmail.com authenticated successfully","service":"acquisitions-api","timestamp":"2025-12-05T18:51:25.157Z"}
+{"level":"info","message":"User signed in successfully: anannya@gmail.com","service":"acquisitions-api","timestamp":"2025-12-05T18:51:25.165Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:51:25 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 200 103 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:51:25.168Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:52:05 +0000] \"POST /api/users HTTP/1.1\" 404 149 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:52:05.324Z"}
+{"level":"info","message":"Getting users...","service":"acquisitions-api","timestamp":"2025-12-05T18:52:10.261Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:52:10 +0000] \"GET /api/users HTTP/1.1\" 200 359 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:52:10.414Z"}
+{"level":"info","message":"Getting user with ID: 1","service":"acquisitions-api","timestamp":"2025-12-05T18:52:26.962Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:52:27 +0000] \"GET /api/users/1 HTTP/1.1\" 200 197 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:52:27.107Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:52:31 +0000] \"DELETE /api/users/1 HTTP/1.1\" 403 70 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:52:31.252Z"}
+{"level":"info","message":"User anirban@gmail.com authenticated successfully","service":"acquisitions-api","timestamp":"2025-12-05T18:53:02.983Z"}
+{"level":"info","message":"User signed in successfully: anirban@gmail.com","service":"acquisitions-api","timestamp":"2025-12-05T18:53:02.990Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:53:02 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 200 104 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:53:02.994Z"}
+{"level":"info","message":"Getting user with ID: 5","service":"acquisitions-api","timestamp":"2025-12-05T18:53:14.797Z"}
+{"level":"error","message":"Error getting user by id User not found","service":"acquisitions-api","stack":"Error: User not found\n    at getUserById (file:///app/src/services/users.services.js:37:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async getUserById (file:///app/src/controllers/users.controller.js:40:22)","timestamp":"2025-12-05T18:53:14.924Z"}
+{"level":"error","message":"Error fetching user by ID User not found","service":"acquisitions-api","stack":"Error: User not found\n    at getUserById (file:///app/src/services/users.services.js:37:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async getUserById (file:///app/src/controllers/users.controller.js:40:22)","timestamp":"2025-12-05T18:53:14.925Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:53:14 +0000] \"GET /api/users/5 HTTP/1.1\" 404 26 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:53:14.927Z"}
+{"level":"info","message":"Getting user with ID: 4","service":"acquisitions-api","timestamp":"2025-12-05T18:53:18.616Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:53:18 +0000] \"GET /api/users/4 HTTP/1.1\" 200 196 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:53:18.745Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [05/Dec/2025:18:53:24 +0000] \"DELETE /api/users/4 HTTP/1.1\" 403 70 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-12-05T18:53:24.078Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [05/Dec/2025:20:27:47 +0000] \"GET /health HTTP/1.1\" 200 74 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2025-12-05T20:27:47.176Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [05/Dec/2025:20:27:47 +0000] \"GET /api HTTP/1.1\" 200 41 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2025-12-05T20:27:47.373Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [05/Dec/2025:20:27:47 +0000] \"GET /nonexistent HTTP/1.1\" 404 27 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2025-12-05T20:27:47.578Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [05/Dec/2025:20:31:01 +0000] \"GET /health HTTP/1.1\" 200 73 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2025-12-05T20:31:01.118Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [05/Dec/2025:20:31:01 +0000] \"GET /api HTTP/1.1\" 200 41 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2025-12-05T20:31:01.220Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [05/Dec/2025:20:31:01 +0000] \"GET /nonexistent HTTP/1.1\" 404 27 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2025-12-05T20:31:01.300Z"}
