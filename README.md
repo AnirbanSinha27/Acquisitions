@@ -234,9 +234,6 @@ For detailed troubleshooting, see [DOCKER_README.md](./DOCKER_README.md).
 4. Test your changes
 5. Submit a pull request
 
-## 📄 License
-
-ISC
 
 ## 🆘 Support
 
